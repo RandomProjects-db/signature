@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 45 80% 52%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 45 80% 52%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 45 80% 52%;
+
+    --primary: 45 80% 52%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 45 80% 52%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 45 60% 70%;
+
+    --accent: 45 80% 52%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 4%;
+
+    --border: 45 40% 40%;
+    --input: 45 40% 40%;
+    --ring: 45 80% 52%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-rich-black text-gold;
+  }
+}
+
+/* Custom colors */
+.bg-gold {
+  background-color: #d4af37;
+}
+.hover\:bg-gold\/90:hover {
+  background-color: rgba(212, 175, 55, 0.9);
+}
+.text-gold {
+  color: #d4af37;
+}
+.bg-rich-black {
+  background-color: #0a0a0a;
+}
+.text-rich-black {
+  color: #0a0a0a;
+}
+.bg-off-black {
+  background-color: #121212;
+}
+.text-off-black {
+  color: #121212;
+}
+
+/* Font families */
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+/* Custom utilities */
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.gold-border-gradient {
+  position: relative;
+}
+
+.gold-border-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #d4af37, #f5d485, #b8860b, #d4af37);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.text-shadow-gold {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
